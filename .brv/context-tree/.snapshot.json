@@ -1,0 +1,42 @@
+{
+  "createdAt": "2026-01-15T12:04:15.884Z",
+  "files": {
+    "design/data_models/data_models.md": {
+      "hash": "3221ed3a97d037137fa630e1f7535f0fe214b2a7f1a3dba9869e9a27c4480efc",
+      "size": 1338
+    },
+    "api_design/payment_api/payment_api.md": {
+      "hash": "359431af6ab87c7bfe1a4e9d49b9ddc00f318a4cd9eaae56a8472192b564ba4d",
+      "size": 1079
+    },
+    "business_logic/payment_processing_logic/payment_processing_logic.md": {
+      "hash": "3f1fe32eb10853abaddf90e48d18dea36c0b6509f2273e93e742706a45bdf98e",
+      "size": 1144
+    },
+    "design/shared_state_and_assumptions/shared_state_and_assumptions.md": {
+      "hash": "768d41e99dcdc1607243e71fe91136f45da0fe77f9b427825379065cca213e95",
+      "size": 1377
+    },
+    "bug_fixes/double_credit_bug_analysis/double_credit_bug_analysis.md": {
+      "hash": "2c95cc8a8e97c4d25cd946e68df335921c42808eb0061c3e9a20a0b5912aa4a4",
+      "size": 1453
+    },
+    "bug_fixes/rollout_considerations_for_double_credit_fix/rollout_considerations_for_double_credit_fix.md": {
+      "hash": "bae4c570de55f2fed9124c40438b5c99d037f1d3a22d63a136d290cdbcc6ad32",
+      "size": 1504
+    },
+    "testing/bug_reproduction_demo/bug_reproduction_demo.md": {
+      "hash": "822841c90d7f6546f47ce7e34e77f8c0da0cc9fc3709af501b065034e05a8ac6",
+      "size": 1830
+    },
+    "structure/entry_points/entry_points.md": {
+      "hash": "c8c545b59934fffe3ff44314a268c344dff20211358a39b8ab640135ec1e0f82",
+      "size": 846
+    },
+    "structure/project_overview/project_overview.md": {
+      "hash": "0ee8283023085b4c9b45af99f946e04a9cedfb51c3de33fbe3870985cf7072d4",
+      "size": 1017
+    }
+  },
+  "version": 1
+}
