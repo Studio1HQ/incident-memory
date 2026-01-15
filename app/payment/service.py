@@ -63,22 +63,32 @@ def confirm_charge(charge_id: str):
 def rollback_charge(charge_id: str):
     """
     Rolls back a charge by restoring the user's balance.
-    This function is not idempotent and is the source of the bug.
+    This function is idempotent - multiple calls return the same result
+    without crediting funds more than once.
     """
     charge = store.get_charge(charge_id)
     if not charge:
         raise ValueError("Charge not found")
 
+    # Idempotency check: if already rolled back, return existing charge
+    if charge.state == ChargeState.ROLLED_BACK:
+        logging.info(f"Charge {charge_id} already rolled back. Returning existing state (idempotent).")
+        return charge
+
+    # Only allow rollback from RESERVED state
+    if charge.state != ChargeState.RESERVED:
+        raise ValueError(f"Cannot rollback charge in {charge.state.value} state. Only RESERVED charges can be rolled back.")
+
     user_id = charge.user_id
     amount = charge.amount
     balance = store.get_user_balance(user_id)
-    
-  
+
     store.set_user_balance(user_id, balance + amount)
-    
+
     charge.state = ChargeState.ROLLED_BACK
     store.save_charge(charge)
     logging.warning(f"Rolled back charge {charge_id}. Restored {amount} to user {user_id}. New balance: {store.get_user_balance(user_id)}")
+    return charge
 
 
 def refund_charge(charge_id: str):
